@@ -23,10 +23,23 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Sách", "Index", "saches")</li>
-                    <li>@Html.ActionLink("Hóa đơn", "Index", "hoadons")</li>
-                    <li>@Html.ActionLink("Loại", "Index", "loais")</li>
-                    <li>@Html.ActionLink("Khách hàng", "Index", "KhachHangs")</li>
+                    @if (Session["user"] != null)
+                    {
+                        <li>@Html.ActionLink("Sách", "Index", "saches")</li>
+                        <li>@Html.ActionLink("Hóa đơn", "Index", "hoadons")</li>
+                        <li>@Html.ActionLink("Loại", "Index", "loais")</li>
+                        <li>@Html.ActionLink("Khách hàng", "Index", "KhachHangs")</li>
+                    }
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if (Session["user"] != null)
+                    {
+                        <li>@Html.ActionLink("Logout", "LogoutView", "DangNhaps")</li>
+                    }
+                    else
+                    {
+                    <li>@Html.ActionLink("Login", "Login", "DangNhaps")</li>
+                    }
                 </ul>
             </div>
         </div>

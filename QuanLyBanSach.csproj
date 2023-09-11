@@ -400,6 +400,7 @@
     <Content Include="Views\DangNhaps\Login.cshtml" />
     <Content Include="Views\Shared\_LayoutPage1.cshtml" />
     <Content Include="Views\CusService\Index.cshtml" />
+    <Content Include="Views\DangNhaps\Logout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

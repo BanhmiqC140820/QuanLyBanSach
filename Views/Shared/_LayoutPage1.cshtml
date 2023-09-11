@@ -9,17 +9,17 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-collapse collapse">Ư
+            <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Trang chủ", "Index", "CusService")</li>
                     <li>@Html.ActionLink("Giỏ hàng", "#", "#")</li>
-                    <li>@Html.ActionLink("Thanh toán", "Index", "loais")</li>
+                    <li>@Html.ActionLink("Thanh toán", "#", "#")</li>
                 </ul>
             </div>
         </div>
-    </div>
+    </nav>
     <div class="container body-content">
         @RenderBody()
         <hr />

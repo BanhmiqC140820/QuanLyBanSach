@@ -30,11 +30,20 @@ namespace QuanLyBanSach.Controllers
         {
             if (IsValidUser(user))
             {
-                return RedirectToAction("Index", "KhachHangs");
+                return RedirectToAction("Index", "Saches");
             }
 
             ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không đúng.");
             return View(user);
+        }
+        public ActionResult LogoutView()
+        {
+            Session.Abandon();
+            return RedirectToAction("Logout");
+        }
+        public ActionResult Logout()
+        {
+            return View();
         }
         private bool IsValidUser(DangNhap user)
         {
@@ -43,6 +52,7 @@ namespace QuanLyBanSach.Controllers
             {
                 if(dbuser.MatKhau== user.MatKhau)
                 {
+                    Session["user"] = dbuser;
                     return true;
                 }
             }
