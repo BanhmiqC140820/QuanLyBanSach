@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -46,10 +47,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -128,6 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CusServiceController.cs" />
     <Compile Include="Controllers\DangNhapsController.cs" />
     <Compile Include="Controllers\hoadonsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -138,6 +140,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ChiTietHoaDon.cs" />
+    <Compile Include="Models\CustomerService.cs" />
     <Compile Include="Models\DangNhap.cs" />
     <Compile Include="Models\hoadon.cs" />
     <Compile Include="Models\KhachHang.cs" />
@@ -156,6 +159,192 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="image_sach\a1.jpg" />
+    <Content Include="image_sach\a3.jpg" />
+    <Content Include="image_sach\a4.jpg" />
+    <Content Include="image_sach\a5.jpg" />
+    <Content Include="image_sach\b1.jpg" />
+    <Content Include="image_sach\b11.jpg" />
+    <Content Include="image_sach\b12.jpg" />
+    <Content Include="image_sach\b14.jpg" />
+    <Content Include="image_sach\b16.jpg" />
+    <Content Include="image_sach\b17.jpg" />
+    <Content Include="image_sach\b18.jpg" />
+    <Content Include="image_sach\b19.jpg" />
+    <Content Include="image_sach\b2.jpg" />
+    <Content Include="image_sach\b20.jpg" />
+    <Content Include="image_sach\b21.jpg" />
+    <Content Include="image_sach\b22.jpg" />
+    <Content Include="image_sach\b24.jpg" />
+    <Content Include="image_sach\b25.jpg" />
+    <Content Include="image_sach\b3.jpg" />
+    <Content Include="image_sach\b4.jpg" />
+    <Content Include="image_sach\b5.jpg" />
+    <Content Include="image_sach\b6.jpg" />
+    <Content Include="image_sach\b7.jpg" />
+    <Content Include="image_sach\b8.jpg" />
+    <Content Include="image_sach\c1.jpg" />
+    <Content Include="image_sach\c10.jpg" />
+    <Content Include="image_sach\c11.jpg" />
+    <Content Include="image_sach\c12.jpg" />
+    <Content Include="image_sach\c2.jpg" />
+    <Content Include="image_sach\c3.jpg" />
+    <Content Include="image_sach\c4.jpg" />
+    <Content Include="image_sach\c5.jpg" />
+    <Content Include="image_sach\c6.jpg" />
+    <Content Include="image_sach\c8.jpg" />
+    <Content Include="image_sach\c9.jpg" />
+    <Content Include="image_sach\d1.jpg" />
+    <Content Include="image_sach\d2.jpg" />
+    <Content Include="image_sach\d3.jpg" />
+    <Content Include="image_sach\d4.jpg" />
+    <Content Include="image_sach\d5.jpg" />
+    <Content Include="image_sach\d6.jpg" />
+    <Content Include="image_sach\d7.jpg" />
+    <Content Include="image_sach\Default.aspx" />
+    <Content Include="image_sach\Default.aspx.vb" />
+    <Content Include="image_sach\h1.jpg" />
+    <Content Include="image_sach\h2.jpg" />
+    <Content Include="image_sach\h3.jpg" />
+    <Content Include="image_sach\h4.jpg" />
+    <Content Include="image_sach\h5.jpg" />
+    <Content Include="image_sach\h6.jpg" />
+    <Content Include="image_sach\h7.jpg" />
+    <Content Include="image_sach\h8.jpg" />
+    <Content Include="image_sach\k1.jpg" />
+    <Content Include="image_sach\k10.jpg" />
+    <Content Include="image_sach\k11.jpg" />
+    <Content Include="image_sach\k12.jpg" />
+    <Content Include="image_sach\k15.jpg" />
+    <Content Include="image_sach\k2.jpg" />
+    <Content Include="image_sach\k3.jpg" />
+    <Content Include="image_sach\K4.jpg" />
+    <Content Include="image_sach\k5.jpg" />
+    <Content Include="image_sach\k6.jpg" />
+    <Content Include="image_sach\k7.jpg" />
+    <Content Include="image_sach\k8.jpg" />
+    <Content Include="image_sach\k9.jpg" />
+    <Content Include="image_sach\khoa1.jpg" />
+    <Content Include="image_sach\khoa11.jpg" />
+    <Content Include="image_sach\khoa12.jpg" />
+    <Content Include="image_sach\khoa13.jpg" />
+    <Content Include="image_sach\khoa14.jpg" />
+    <Content Include="image_sach\khoa15.jpg" />
+    <Content Include="image_sach\khoa16.jpg" />
+    <Content Include="image_sach\khoa17.jpg" />
+    <Content Include="image_sach\khoa3.jpg" />
+    <Content Include="image_sach\khoa4.jpg" />
+    <Content Include="image_sach\khoa5.jpg" />
+    <Content Include="image_sach\khoa7.jpg" />
+    <Content Include="image_sach\khoa8.jpg" />
+    <Content Include="image_sach\khoa9.jpg" />
+    <Content Include="image_sach\l1.jpg" />
+    <Content Include="image_sach\l10.jpg" />
+    <Content Include="image_sach\l11.jpg" />
+    <Content Include="image_sach\l12.jpg" />
+    <Content Include="image_sach\l13.jpg" />
+    <Content Include="image_sach\l14.jpg" />
+    <Content Include="image_sach\l15.jpg" />
+    <Content Include="image_sach\l16.jpg" />
+    <Content Include="image_sach\l17.jpg" />
+    <Content Include="image_sach\l2.jpg" />
+    <Content Include="image_sach\l3.jpg" />
+    <Content Include="image_sach\l4.jpg" />
+    <Content Include="image_sach\l5.jpg" />
+    <Content Include="image_sach\l6.jpg" />
+    <Content Include="image_sach\l7.jpg" />
+    <Content Include="image_sach\l8.jpg" />
+    <Content Include="image_sach\l9.jpg" />
+    <Content Include="image_sach\ly1.jpg" />
+    <Content Include="image_sach\ly2.jpg" />
+    <Content Include="image_sach\ly3.jpg" />
+    <Content Include="image_sach\ly4.jpg" />
+    <Content Include="image_sach\ly5.jpg" />
+    <Content Include="image_sach\ly6.jpg" />
+    <Content Include="image_sach\ly7.jpg" />
+    <Content Include="image_sach\n1.jpg" />
+    <Content Include="image_sach\n2.jpg" />
+    <Content Include="image_sach\n3.jpg" />
+    <Content Include="image_sach\n4.jpg" />
+    <Content Include="image_sach\n6.jpg" />
+    <Content Include="image_sach\n7.jpg" />
+    <Content Include="image_sach\o1.jpg" />
+    <Content Include="image_sach\o2.jpg" />
+    <Content Include="image_sach\o3.jpg" />
+    <Content Include="image_sach\o4.jpg" />
+    <Content Include="image_sach\o5.jpg" />
+    <Content Include="image_sach\o6.jpg" />
+    <Content Include="image_sach\o7.jpg" />
+    <Content Include="image_sach\o8.jpg" />
+    <Content Include="image_sach\t1.jpg" />
+    <Content Include="image_sach\t2.jpg" />
+    <Content Include="image_sach\t3.jpg" />
+    <Content Include="image_sach\t4.jpg" />
+    <Content Include="image_sach\t5.jpg" />
+    <Content Include="image_sach\t6.jpg" />
+    <Content Include="image_sach\t7.jpg" />
+    <Content Include="image_sach\t8.jpg" />
+    <Content Include="image_sach\tin1.jpg" />
+    <Content Include="image_sach\tin10.jpg" />
+    <Content Include="image_sach\tin11.jpg" />
+    <Content Include="image_sach\tin12.jpg" />
+    <Content Include="image_sach\tin13.jpg" />
+    <Content Include="image_sach\tin14.jpg" />
+    <Content Include="image_sach\tin15.jpg" />
+    <Content Include="image_sach\tin16.jpg" />
+    <Content Include="image_sach\tin2.jpg" />
+    <Content Include="image_sach\tin3.jpg" />
+    <Content Include="image_sach\tin4.jpg" />
+    <Content Include="image_sach\tin5.jpg" />
+    <Content Include="image_sach\tin6.jpg" />
+    <Content Include="image_sach\tin7.jpg" />
+    <Content Include="image_sach\tin8.jpg" />
+    <Content Include="image_sach\tin9.jpg" />
+    <Content Include="image_sach\toan1.jpg" />
+    <Content Include="image_sach\toan10.jpg" />
+    <Content Include="image_sach\toan2.jpg" />
+    <Content Include="image_sach\toan3.jpg" />
+    <Content Include="image_sach\toan4.jpg" />
+    <Content Include="image_sach\toan5.jpg" />
+    <Content Include="image_sach\toan6.jpg" />
+    <Content Include="image_sach\toan7.jpg" />
+    <Content Include="image_sach\toan8.jpg" />
+    <Content Include="image_sach\toan9.jpg" />
+    <Content Include="image_sach\v1.jpg" />
+    <Content Include="image_sach\v10.jpg" />
+    <Content Include="image_sach\v11.jpg" />
+    <Content Include="image_sach\v12.jpg" />
+    <Content Include="image_sach\v13.jpg" />
+    <Content Include="image_sach\v14.jpg" />
+    <Content Include="image_sach\v15.jpg" />
+    <Content Include="image_sach\v16.jpg" />
+    <Content Include="image_sach\v17.jpg" />
+    <Content Include="image_sach\v18.jpg" />
+    <Content Include="image_sach\v19.jpg" />
+    <Content Include="image_sach\v2.jpg" />
+    <Content Include="image_sach\v3.jpg" />
+    <Content Include="image_sach\v4.jpg" />
+    <Content Include="image_sach\v5.jpg" />
+    <Content Include="image_sach\v6.jpg" />
+    <Content Include="image_sach\v7.jpg" />
+    <Content Include="image_sach\v8.jpg" />
+    <Content Include="image_sach\v9.jpg" />
+    <Content Include="image_sach\y1.jpg" />
+    <Content Include="image_sach\y10.jpg" />
+    <Content Include="image_sach\y11.jpg" />
+    <Content Include="image_sach\y12.jpg" />
+    <Content Include="image_sach\y13.jpg" />
+    <Content Include="image_sach\y14.jpg" />
+    <Content Include="image_sach\y15.jpg" />
+    <Content Include="image_sach\y16.jpg" />
+    <Content Include="image_sach\y2.jpg" />
+    <Content Include="image_sach\y3.jpg" />
+    <Content Include="image_sach\y4.jpg" />
+    <Content Include="image_sach\y5.jpg" />
+    <Content Include="image_sach\y6.jpg" />
+    <Content Include="image_sach\y7.jpg" />
+    <Content Include="image_sach\y8.jpg" />
+    <Content Include="image_sach\y9.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -209,6 +398,8 @@
     <Content Include="Views\loais\Edit.cshtml" />
     <Content Include="Views\loais\Index.cshtml" />
     <Content Include="Views\DangNhaps\Login.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage1.cshtml" />
+    <Content Include="Views\CusService\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -262,7 +453,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
